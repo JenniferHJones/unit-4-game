@@ -35,13 +35,14 @@ console.log(crystal4Number);
 
 // on click function for crystal1
 $("#crystal1").on("click", function () {
-    console.log("yes!");
+    document.onkeydown = function (event) {
+        var selectCrystal1 = event.key;
+        counter.push(selectCrystal1);
+    };
+    console.log(crystal1Number);
 });
 
 // function to add clicked crystal values to counter
-document.onkeydown = function (event) {
-    var crystalSelect = event.key;
-    counter.push(crystalSelect);
-};
+
 
 
