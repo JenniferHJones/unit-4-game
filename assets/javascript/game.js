@@ -1,48 +1,60 @@
-// variables
-var randomNumber = [];
-var win = 0;
-var loss = 0;
-var counter = [];
-var crystal1Number = [];
-var crystal2Number = [];
-var crystal3Number = [];
-var crystal4Number = [];
+$(document).ready(function () {
 
-// computer displays random number between 19 - 120
-var numberDisplay = Math.floor((Math.random() * 102) + 19);
-randomNumber.push(numberDisplay);
-console.log(randomNumber[0]);
+    // variables
+    var winTotal = 0;
+    var lossTotal = 0;
+    var counter = 0;
 
-// computer assigns random number between 1 - 12 to crystal1 
-var randomCrystal1 = Math.floor((Math.random() * 12) + 1);
-crystal1Number.push(randomCrystal1);
-console.log(crystal1Number);
+    // computer displays random number between 19 - 120
+    var numberDisplay = Math.floor((Math.random() * 102) + 19);
+    $("#randomNumber").html(numberDisplay);
+    console.log(numberDisplay);
 
-// computer assigns random number between 1 - 12 to crystal2 
-var randomCrystal2 = Math.floor((Math.random() * 12) + 1);
-crystal2Number.push(randomCrystal2);
-console.log(crystal2Number);
+    // computer assigns random number between 1 - 12 to crystals
+    var randomCrystal1 = Math.floor((Math.random() * 12) + 1);
+    var randomCrystal2 = Math.floor((Math.random() * 12) + 1);
+    var randomCrystal3 = Math.floor((Math.random() * 12) + 1);
+    var randomCrystal4 = Math.floor((Math.random() * 12) + 1);
+    console.log(randomCrystal1, randomCrystal2, randomCrystal3, randomCrystal4);
 
-// computer assigns random number between 1 - 12 to crystal3 
-var randomCrystal3 = Math.floor((Math.random() * 12) + 1);
-crystal3Number.push(randomCrystal3);
-console.log(crystal3Number);
+    // function for winning game
+    function win() {
+        winTotal++;
+        $("#win").html("Total wins:  " + winTotal);
+    }
 
-// computer assigns random number between 1 - 12 to crystal4 
-var randomCrystal4 = Math.floor((Math.random() * 12) + 1);
-crystal4Number.push(randomCrystal4);
-console.log(crystal4Number);
+    // function for losing game
+    function lose() {
+        lossTotal++;
+        $("#loss").html("Total losses:  " +lossTotal);
+    }
 
-// on click function for crystal1
-$("#crystal1").on("click", function () {
-    document.onkeydown = function (event) {
-        var selectCrystal1 = event.key;
-        counter.push(selectCrystal1);
-    };
-    console.log(crystal1Number);
+    // on click function for crystal1 with if statement for counter action
+    $("#crystal1").click(function () {
+        counter = counter + randomCrystal1;
+        $("#counter").html("Score Counter:  " + counter);
+        if (counter === numberDisplay) {
+            win();
+        } else {
+            (counter > numberDisplay)
+            lose();
+        };
+    });
+
+    $("#crystal2").on("click", function () {
+        counter = counter += randomCrystal2;
+        $("#counter").html(counter);
+    });
+
+    $("#crystal3").on("click", function () {
+        counter = counter += randomCrystal3;
+        $("#counter").html(counter);
+    });
+
+    $("#crystal4").on("click", function () {
+        counter = counter += randomCrystal4;
+        $("#counter").html(counter);
+    });
+
+
 });
-
-// function to add clicked crystal values to counter
-
-
-
