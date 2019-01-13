@@ -35,6 +35,7 @@ $(document).ready(function () {
     function win() {
         winTotal++;
         $("#win").html("Total wins:  " + winTotal);
+        alert("You won! Let's play again.");
         reset();
     }
 
@@ -42,6 +43,7 @@ $(document).ready(function () {
     function lose() {
         lossTotal++;
         $("#loss").html("Total losses:  " + lossTotal);
+        alert("No win this time. Try again!");
         reset();
     }
 
