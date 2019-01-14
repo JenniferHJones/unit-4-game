@@ -1,6 +1,6 @@
 # unit-4-game 
 
-## Crystal Collection
+## Crystal Collector Game
 
 The computer selects a random number from 19 - 120 to display at the start of the game. The player's objective is to match their score to the display number by clicking on the different crystals that have randomly assigned values from 1 - 12. Clicking on a crystal adds its value to the player's score counter.
 
