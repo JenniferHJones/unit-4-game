@@ -20,7 +20,7 @@ $(document).ready(function () {
     // function to reset game after playing a round
     function reset() {
         counter = 0;
-        $("#counter").html("Score Counter:  " + counter);
+        $("#counter").html(counter);
         numberDisplay = Math.floor((Math.random() * 102) + 19);
         $("#randomNumber").html(numberDisplay);
         console.log(numberDisplay);
@@ -34,7 +34,7 @@ $(document).ready(function () {
     // function for winning game
     function win() {
         winTotal++;
-        $("#win").html("Total wins:  " + winTotal);
+        $("#win").html(winTotal);
         alert("You won! Let's play again.");
         reset();
     }
@@ -42,7 +42,7 @@ $(document).ready(function () {
     // function for losing game
     function lose() {
         lossTotal++;
-        $("#loss").html("Total losses:  " + lossTotal);
+        $("#loss").html(lossTotal);
         alert("No win this time. Try again!");
         reset();
     }
@@ -50,7 +50,7 @@ $(document).ready(function () {
     // on click function for crystals with if statement for counter action
     $("#crystal1").click(function () {
         counter = counter + randomCrystal1;
-        $("#counter").html("Score Counter:  " + counter);
+        $("#counter").html(counter);
         if (counter === numberDisplay) {
             win();
         } else if (counter > numberDisplay) {
@@ -60,7 +60,7 @@ $(document).ready(function () {
 
     $("#crystal2").on("click", function () {
         counter = counter + randomCrystal2;
-        $("#counter").html("Score Counter:  " + counter);
+        $("#counter").html(counter);
         if (counter === numberDisplay) {
             win();
         } else if (counter > numberDisplay) {
@@ -70,7 +70,7 @@ $(document).ready(function () {
 
     $("#crystal3").on("click", function () {
         counter = counter + randomCrystal3;
-        $("#counter").html("Score Counter:  " + counter);
+        $("#counter").html(counter);
         if (counter === numberDisplay) {
             win();
         } else if (counter > numberDisplay) {
@@ -80,7 +80,7 @@ $(document).ready(function () {
 
     $("#crystal4").on("click", function () {
         counter = counter + randomCrystal4;
-        $("#counter").html("Score Counter:  " + counter);
+        $("#counter").html(counter);
         if (counter === numberDisplay) {
             win();
         } else if (counter > numberDisplay) {
